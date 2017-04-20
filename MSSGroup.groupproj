@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{AD42DFA6-38EF-4200-8FF1-F3D4CC86B41E}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="Map_Script_Snippets.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="utils\SnippetToJson\SnippetToJson.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Map_Script_Snippets">
+        <MSBuild Projects="Map_Script_Snippets.dproj"/>
+    </Target>
+    <Target Name="Map_Script_Snippets:Clean">
+        <MSBuild Projects="Map_Script_Snippets.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Map_Script_Snippets:Make">
+        <MSBuild Projects="Map_Script_Snippets.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SnippetToJson">
+        <MSBuild Projects="utils\SnippetToJson\SnippetToJson.dproj"/>
+    </Target>
+    <Target Name="SnippetToJson:Clean">
+        <MSBuild Projects="utils\SnippetToJson\SnippetToJson.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SnippetToJson:Make">
+        <MSBuild Projects="utils\SnippetToJson\SnippetToJson.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Map_Script_Snippets;SnippetToJson"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Map_Script_Snippets:Clean;SnippetToJson:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Map_Script_Snippets:Make;SnippetToJson:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

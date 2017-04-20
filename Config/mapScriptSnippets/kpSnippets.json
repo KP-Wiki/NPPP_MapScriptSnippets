@@ -1,0 +1,67 @@
+[
+    {
+        "Group": 0,
+        "Title": "KP - OnHouseBuilt",
+        "Code": "procedure OnHouseBuilt(aHouse: Integer);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 0,
+        "Title": "KP - OnHousePlanPlaced",
+        "Code": "procedure OnHousePlanPlaced(aPlayer, aX, aY: Word; aType: TKMHouseType);\r\nconst\r\n  HOUSE_TYPE = 13;\r\nbegin\r\n  if (aHouse = HOUSE_TYPE) then\r\n    \r\nend;\r\n"
+    },
+    {
+        "Group": 0,
+        "Title": "KP - OnHouseDamaged",
+        "Code": "procedure OnHouseDamaged(aHouse, aAttacker: Integer);\r\nbegin\r\n  if not (aAttacker = -1) then\r\n    Actions.OverlayTextSet(-1, 'Someone attacked a house!')\r\n  else\r\n    Actions.OverlayTextSet(-1, 'Oops, something went wrong.');\r\nend;\r\n"
+    },
+    {
+        "Group": 0,
+        "Title": "KP - OnHouseDestroyed",
+        "Code": "procedure OnHouseDestroyed(aHouse: Integer; aDestroyerIndex: Word);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 0,
+        "Title": "KP - OnMissionStart",
+        "Code": "procedure OnMissionStart;\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 0,
+        "Title": "KP - OnTick",
+        "Code": "procedure OnTick(aTick: Integer);\r\nbegin\r\n  if (aTick mod 10 = 0) then\r\n    \r\n  if (aTick mod 10 = 2) then\r\n    \r\n  if (aTick mod 10 = 4) then\r\n    \r\n  if (aTick mod 10 = 6) then\r\n    \r\n  if (aTick mod 10 = 8) then\r\n    \r\nend;\r\n"
+    },
+    {
+        "Group": 0,
+        "Title": "KP - OnPlayerDefeated",
+        "Code": "procedure OnPlayerDefeated(aPlayer: Word);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 0,
+        "Title": "KP - OnPlayerVictory",
+        "Code": "procedure OnPlayerVictory(aPlayer: Word);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 0,
+        "Title": "KP - OnUnitDied",
+        "Code": "procedure OnUnitDied(aUnit: Integer; aKillerOwner: Word);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 0,
+        "Title": "KP - OnUnitTrained",
+        "Code": "procedure OnUnitTrained(aUnit: Integer);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 0,
+        "Title": "KP - OnUnitWounded",
+        "Code": "procedure OnUnitWounded(aUnit, aAttacker: Integer);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 0,
+        "Title": "KP - OnWarriorEquipped",
+        "Code": "procedure OnWarriorEquipped(aUnit, aGroup: Integer);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 3,
+        "Title": "KP - GetHouseName",
+        "Code": "function GetHouseName(aHouseType: TKMHouseType): String;\r\nbegin\r\n  case aHouseType of\r\n    htNone:           Result := 'None';\r\n    htFoundry:        Result := 'Foundry';\r\n    htWeaponSmithy:   Result := 'Weapon-smithy';\r\n    htCoalMaker:      Result := 'Coal-maker';\r\n    htIronMine:       Result := 'Iron-mine';\r\n    htGoldMine:       Result := 'Gold-mine';\r\n    htFishermans:     Result := 'Fishermans';\r\n    htBakery:         Result := 'Bakery';\r\n    htFarm:           Result := 'Farm';\r\n    htWoodcutters:    Result := 'Woodcutters';\r\n    htArmorSmithy:    Result := 'Armor-smithy';\r\n    htCamp:           Result := 'Camp';\r\n    htStables:        Result := 'Stables';\r\n    htSchool:         Result := 'School';\r\n    htStoneCutter:    Result := 'Stone-cutters';\r\n    htMetallurgists:  Result := 'Metallurgists';\r\n    htSwineFarm:      Result := 'Swine-farm';\r\n    htArrowTower:     Result := 'Arrow-tower';\r\n    htRangerShop:     Result := 'Ranger-shop';\r\n    htWeaponWorkshop: Result := 'Weapon-workshop';\r\n    htArmorWorkshop:  Result := 'Armor-workshop';\r\n    htBarracks:       Result := 'Barracks';\r\n    htMill:           Result := 'Mill';\r\n    htSiegeWorkshop:  Result := 'Siege-workshop';\r\n    htButchers:       Result := 'Butchers';\r\n    htTannery:        Result := 'Tannery';\r\n    htStore:          Result := 'Store';\r\n    htTavern:         Result := 'Tavern';\r\n    htBrewery:        Result := 'Brewery';\r\n    htMarketplace:    Result := 'Marketplace';\r\n    htFort:           Result := 'Fort';\r\n    htBoltTower:      Result := 'Bolt-tower';\r\n    htCiderMaker:     Result := 'Cider-maker';\r\n    htSawmill:        Result := 'Sawmill';\r\n    htCottage:        Result := 'Cottage';\r\n  else\r\n    Result := 'Unknown';\r\n  end;\r\nend;\r\n"
+    }
+]
