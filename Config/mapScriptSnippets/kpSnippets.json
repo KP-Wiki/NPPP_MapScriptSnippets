@@ -6,18 +6,18 @@
     },
     {
         "Group": 0,
-        "Title": "KP - OnHousePlanPlaced",
-        "Code": "procedure OnHousePlanPlaced(aPlayer, aX, aY: Word; aType: TKMHouseType);\r\nconst\r\n  HOUSE_TYPE = 13;\r\nbegin\r\n  if (aHouse = HOUSE_TYPE) then\r\n    \r\nend;\r\n"
-    },
-    {
-        "Group": 0,
         "Title": "KP - OnHouseDamaged",
-        "Code": "procedure OnHouseDamaged(aHouse, aAttacker: Integer);\r\nbegin\r\n  if not (aAttacker = -1) then\r\n    Actions.OverlayTextSet(-1, 'Someone attacked a house!')\r\n  else\r\n    Actions.OverlayTextSet(-1, 'Oops, something went wrong.');\r\nend;\r\n"
+        "Code": "procedure OnHouseDamaged(aHouse: Integer; aAttacker: Integer);\r\nbegin\r\n  \r\nend;\r\n"
     },
     {
         "Group": 0,
         "Title": "KP - OnHouseDestroyed",
-        "Code": "procedure OnHouseDestroyed(aHouse: Integer; aDestroyerIndex: Word);\r\nbegin\r\n  \r\nend;\r\n"
+        "Code": "procedure OnHouseDestroyed(aHouse: Integer; aDestroyerIndex: Integer);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 0,
+        "Title": "KP - OnHousePlanPlaced",
+        "Code": "procedure OnHousePlanPlaced(aPlayer: Integer; aX: Word; aY: Word; aType: TKMHouseType);\r\nbegin\r\n  \r\nend;\r\n"
     },
     {
         "Group": 0,
@@ -26,23 +26,28 @@
     },
     {
         "Group": 0,
+        "Title": "KP - OnPlayerDefeated",
+        "Code": "procedure OnPlayerDefeated(aPlayer: Integer);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 0,
+        "Title": "KP - OnPlayerVictory",
+        "Code": "procedure OnPlayerVictory(aPlayer: Integer);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 0,
+        "Title": "KP - OnTerrainTrigger",
+        "Code": "procedure OnTerrainTrigger(aTriggerId: Integer; aUnit: Integer; aX: Word; aY: Word);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 0,
         "Title": "KP - OnTick",
         "Code": "procedure OnTick(aTick: Integer);\r\nbegin\r\n  if (aTick mod 10 = 0) then\r\n    \r\n  if (aTick mod 10 = 2) then\r\n    \r\n  if (aTick mod 10 = 4) then\r\n    \r\n  if (aTick mod 10 = 6) then\r\n    \r\n  if (aTick mod 10 = 8) then\r\n    \r\nend;\r\n"
     },
     {
         "Group": 0,
-        "Title": "KP - OnPlayerDefeated",
-        "Code": "procedure OnPlayerDefeated(aPlayer: Word);\r\nbegin\r\n  \r\nend;\r\n"
-    },
-    {
-        "Group": 0,
-        "Title": "KP - OnPlayerVictory",
-        "Code": "procedure OnPlayerVictory(aPlayer: Word);\r\nbegin\r\n  \r\nend;\r\n"
-    },
-    {
-        "Group": 0,
         "Title": "KP - OnUnitDied",
-        "Code": "procedure OnUnitDied(aUnit: Integer; aKillerOwner: Word);\r\nbegin\r\n  \r\nend;\r\n"
+        "Code": "procedure OnUnitDied(aUnit: Integer; aKillerOwner: Integer);\r\nbegin\r\n  \r\nend;\r\n"
     },
     {
         "Group": 0,
@@ -51,13 +56,153 @@
     },
     {
         "Group": 0,
-        "Title": "KP - OnUnitWounded",
-        "Code": "procedure OnUnitWounded(aUnit, aAttacker: Integer);\r\nbegin\r\n  \r\nend;\r\n"
+        "Title": "KP - OnUnitWoundedByHouse",
+        "Code": "procedure OnUnitWoundedByHouse(aUnit: Integer; aAttackerHouse: Integer);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 0,
+        "Title": "KP - OnUnitWoundedByUnit",
+        "Code": "procedure OnUnitWoundedByUnit(aUnit: Integer; aAttackerUnit: Integer);\r\nbegin\r\n  \r\nend;\r\n"
     },
     {
         "Group": 0,
         "Title": "KP - OnWarriorEquipped",
-        "Code": "procedure OnWarriorEquipped(aUnit, aGroup: Integer);\r\nbegin\r\n  \r\nend;\r\n"
+        "Code": "procedure OnWarriorEquipped(aUnit: Integer; aGroup: Integer);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - AISoldiersEquipRate",
+        "Code": "procedure AISoldiersEquipRate(aPlayer: Integer; aRate: Word);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - FogCoverAll",
+        "Code": "procedure FogCoverAll(aPlayer: Integer);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - FogCoverCircle",
+        "Code": "procedure FogCoverCircle(aPlayer: Integer; X: Word; Y: Word; aRadius: Word);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - FogCoverRect",
+        "Code": "procedure FogCoverRect(aPlayer: Integer; X1: Word; Y1: Word; X2: Word; Y2: Word);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - FogRevealAll",
+        "Code": "procedure FogRevealAll(aPlayer: Integer);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - FogRevealCircle",
+        "Code": "procedure FogRevealCircle(aPlayer: Integer; X: Word; Y: Word; aRadius: Word);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - FogRevealRect",
+        "Code": "procedure FogRevealRect(aPlayer: Integer; X1: Word; Y1: Word; X2: Word; Y2: Word);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - GiveGroup",
+        "Code": "function GiveGroup(aPlayer: Integer; aUnitType: TKMUnitType; X,Y: Word; aDir: Word; aCount: Word; aColumns: Word): Integer;\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - GiveHouse",
+        "Code": "function GiveHouse(aPlayer: Integer; aHouseType: TKMHouseType; X, Y: Word; aFace: TKMHouseFace): Integer;\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - GiveUnit",
+        "Code": "function GiveUnit(aPlayer: Integer; aUnitType: TKMUnitType; X, Y: Word; aDir: Word): Integer;\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - GiveWares",
+        "Code": "procedure GiveWares(aPlayer: Integer; aWareType: TKMWareType; aCount: Word);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - GiveWeapons",
+        "Code": "procedure GiveWeapons(aPlayer: Integer; aWareType: TKMWareType; aCount: Word);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - GroupOrderAttackHouse",
+        "Code": "procedure GroupOrderAttackHouse(aGroupID: Integer; aHouseID: Integer);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - GroupOrderAttackUnit",
+        "Code": "procedure GroupOrderAttackUnit(aGroupID: Integer; aUnitID: Integer);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - GroupOrderFood",
+        "Code": "procedure GroupOrderFood(aGroupID: Integer);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - GroupOrderHalt",
+        "Code": "procedure GroupOrderHalt(aGroupID: Integer);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - GroupOrderLink",
+        "Code": "procedure GroupOrderLink(aGroupID: Integer; aDestGroupID: Integer);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - GroupOrderSplit",
+        "Code": "function GroupOrderSplit(aGroupID: Integer): Integer;\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - GroupOrderStorm",
+        "Code": "procedure GroupOrderStorm(aGroupID: Integer);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - GroupOrderWalk",
+        "Code": "procedure GroupOrderWalk(aGroupID: Integer; X: Word; Y: Word; aDirection: Word);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - GroupSetFormation",
+        "Code": "procedure GroupSetFormation(aGroupID: Integer; aNumColumns: Byte);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - HouseAddDamage",
+        "Code": "procedure HouseAddDamage(aHouseID: Integer; aDamage: Word);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - HouseAddRepair",
+        "Code": "procedure HouseAddRepair(aHouseID: Integer; aRepair: Word);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - HouseAddWaresTo",
+        "Code": "procedure HouseAddWaresTo(aHouseID: Integer; aWareType: TKMWareType; aCount: Word);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - HouseAllow",
+        "Code": "procedure HouseAllow(aPlayer: Integer; aHouseType: TKMHouseType; aAllowed: Boolean);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - HouseDestroy",
+        "Code": "procedure HouseDestroy(aHouseID: Integer; aSilent: Boolean);\r\nbegin\r\n  \r\nend;\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - HouseRepairEnable",
+        "Code": "procedure HouseRepairEnable(aHouseID: Integer; aRepairEnabled: Boolean);\r\nbegin\r\n  \r\nend;\r\n"
     },
     {
         "Group": 3,
