@@ -72,137 +72,107 @@
     {
         "Group": 1,
         "Title": "KP - AISoldiersEquipRate",
-        "Code": "procedure AISoldiersEquipRate(aPlayer: Integer; aRate: Word);\r\nbegin\r\n  \r\nend;\r\n"
+        "Code": "var\r\n  playerId: Integer;\r\n  rate: Word;\r\n\r\nActions.AISoldiersEquipRate(playerId, rate);\r\n"
     },
     {
         "Group": 1,
         "Title": "KP - FogCoverAll",
-        "Code": "procedure FogCoverAll(aPlayer: Integer);\r\nbegin\r\n  \r\nend;\r\n"
+        "Code": "var\r\n  playerId: Integer;\r\n\r\nActions.FogCoverAll(playerId);\r\n"
     },
     {
         "Group": 1,
         "Title": "KP - FogCoverCircle",
-        "Code": "procedure FogCoverCircle(aPlayer: Integer; X: Word; Y: Word; aRadius: Word);\r\nbegin\r\n  \r\nend;\r\n"
+        "Code": "var\r\n  playerId: Integer;\r\n  xCoord,\r\n  yCoord,\r\n  fogRadius: Word;\r\n\r\nActions.FogCoverCircle(playerId, xCoord, yCoord, fogRadius);\r\n"
     },
     {
         "Group": 1,
         "Title": "KP - FogCoverRect",
-        "Code": "procedure FogCoverRect(aPlayer: Integer; X1: Word; Y1: Word; X2: Word; Y2: Word);\r\nbegin\r\n  \r\nend;\r\n"
+        "Code": "var\r\n  playerId: Integer;\r\n  xStartCoord,\r\n  yStartCoord,\r\n  xEndCoord,\r\n  yEndCoord: Word;\r\n\r\nActions.FogCoverRect(playerId, xStartCoord, yStartCoord, xEndCoord, yEndCoord);\r\n"
     },
     {
         "Group": 1,
         "Title": "KP - FogRevealAll",
-        "Code": "procedure FogRevealAll(aPlayer: Integer);\r\nbegin\r\n  \r\nend;\r\n"
+        "Code": "var\r\n  playerId: Integer;\r\n\r\nActions.FogRevealAll(playerId);\r\n"
     },
     {
         "Group": 1,
         "Title": "KP - FogRevealCircle",
-        "Code": "procedure FogRevealCircle(aPlayer: Integer; X: Word; Y: Word; aRadius: Word);\r\nbegin\r\n  \r\nend;\r\n"
+        "Code": "var\r\n  playerId: Integer;\r\n  xCoord,\r\n  yCoord,\r\n  fogRadius: Word;\r\n\r\nActions.FogRevealCircle(playerId, xCoord, yCoord, fogRadius);\r\n"
     },
     {
         "Group": 1,
         "Title": "KP - FogRevealRect",
-        "Code": "procedure FogRevealRect(aPlayer: Integer; X1: Word; Y1: Word; X2: Word; Y2: Word);\r\nbegin\r\n  \r\nend;\r\n"
+        "Code": "var\r\n  playerId: Integer;\r\n  xStartCoord,\r\n  yStartCoord,\r\n  xEndCoord,\r\n  yEndCoord: Word;\r\n\r\nActions.FogRevealRect(playerId, xStartCoord, yStartCoord, xEndCoord, yEndCoord);\r\n"
     },
     {
         "Group": 1,
         "Title": "KP - GiveGroup",
-        "Code": "function GiveGroup(aPlayer: Integer; aUnitType: TKMUnitType; X,Y: Word; aDir: Word; aCount: Word; aColumns: Word): Integer;\r\nbegin\r\n  \r\nend;\r\n"
+        "Code": "var\r\n  playerId,\r\n  groupId: Integer;\r\n  unitType: TKMUnitType;\r\n  xCoord,\r\n  yCoord,\r\n  direction,\r\n  count,\r\n  columns: Word;\r\n\r\ngroupId := Actions.GiveGroup(playerId, unitType, xCoord, yCoord, direction, count, columns);\r\n"
     },
     {
         "Group": 1,
         "Title": "KP - GiveHouse",
-        "Code": "function GiveHouse(aPlayer: Integer; aHouseType: TKMHouseType; X, Y: Word; aFace: TKMHouseFace): Integer;\r\nbegin\r\n  \r\nend;\r\n"
+        "Code": "var\r\n  playerId,\r\n  houseId: Integer;\r\n  houseType: TKMHouseType;\r\n  xCoord,\r\n  yCoord: Word;\r\n  face: TKMHouseFace;\r\n\r\nhouseId := Actions.GiveHouse(playerId, houseType, xCoord, yCoord, face);\r\n"
     },
     {
         "Group": 1,
         "Title": "KP - GiveUnit",
-        "Code": "function GiveUnit(aPlayer: Integer; aUnitType: TKMUnitType; X, Y: Word; aDir: Word): Integer;\r\nbegin\r\n  \r\nend;\r\n"
+        "Code": "var\r\n  playerId,\r\n  unitId: Integer;\r\n  unitType: TKMUnitType;\r\n  xCoord,\r\n  yCoord,\r\n  direction: Word;\r\n\r\nunitId := Actions.GiveUnit(playerId, unitType, xCoord, yCoord, direction);\r\n"
     },
     {
         "Group": 1,
         "Title": "KP - GiveWares",
-        "Code": "procedure GiveWares(aPlayer: Integer; aWareType: TKMWareType; aCount: Word);\r\nbegin\r\n  \r\nend;\r\n"
+        "Code": "var\r\n  playerId: Integer;\r\n  wareType: TKMWareType\r\n  count: Word;\r\n\r\nActions.GiveWares(playerId, wareType, count);\r\n"
     },
     {
         "Group": 1,
         "Title": "KP - GiveWeapons",
-        "Code": "procedure GiveWeapons(aPlayer: Integer; aWareType: TKMWareType; aCount: Word);\r\nbegin\r\n  \r\nend;\r\n"
+        "Code": "var\r\n  playerId: Integer;\r\n  wareType: TKMWareType\r\n  count: Word;\r\n\r\nActions.GiveWeapons(playerId, wareType, count);\r\n"
     },
     {
         "Group": 1,
         "Title": "KP - GroupOrderAttackHouse",
-        "Code": "procedure GroupOrderAttackHouse(aGroupID: Integer; aHouseID: Integer);\r\nbegin\r\n  \r\nend;\r\n"
+        "Code": "var\r\n  groupId,\r\n  houseId: Integer;\r\n\r\nActions.GroupOrderAttackHouse(groupId, houseId);\r\n"
     },
     {
         "Group": 1,
         "Title": "KP - GroupOrderAttackUnit",
-        "Code": "procedure GroupOrderAttackUnit(aGroupID: Integer; aUnitID: Integer);\r\nbegin\r\n  \r\nend;\r\n"
+        "Code": "var\r\n  groupId,\r\n  unitId: Integer;\r\n\r\nActions.GroupOrderAttackUnit(groupId, unitId);\r\n"
     },
     {
         "Group": 1,
         "Title": "KP - GroupOrderFood",
-        "Code": "procedure GroupOrderFood(aGroupID: Integer);\r\nbegin\r\n  \r\nend;\r\n"
+        "Code": "var\r\n  groupId: Integer;\r\n\r\nActions.GroupOrderFood(groupId);\r\n"
     },
     {
         "Group": 1,
         "Title": "KP - GroupOrderHalt",
-        "Code": "procedure GroupOrderHalt(aGroupID: Integer);\r\nbegin\r\n  \r\nend;\r\n"
+        "Code": "var\r\n  groupId: Integer;\r\n\r\nActions.GroupOrderHalt(groupId);\r\n"
     },
     {
         "Group": 1,
         "Title": "KP - GroupOrderLink",
-        "Code": "procedure GroupOrderLink(aGroupID: Integer; aDestGroupID: Integer);\r\nbegin\r\n  \r\nend;\r\n"
+        "Code": "var\r\n  groupId,\r\n  destGroupId: Integer;\r\n\r\nActions.GroupOrderLink(groupId, destGroupId);\r\n"
     },
     {
         "Group": 1,
         "Title": "KP - GroupOrderSplit",
-        "Code": "function GroupOrderSplit(aGroupID: Integer): Integer;\r\nbegin\r\n  \r\nend;\r\n"
+        "Code": "var\r\n  groupId,\r\n  newGroupId: Integer;\r\n\r\nnewGroupId := Actions.GroupOrderSplit(groupId);\r\n"
     },
     {
         "Group": 1,
         "Title": "KP - GroupOrderStorm",
-        "Code": "procedure GroupOrderStorm(aGroupID: Integer);\r\nbegin\r\n  \r\nend;\r\n"
+        "Code": "var\r\n  groupId: Integer;\r\n\r\nActions.GroupOrderStorm(groupId);\r\n"
     },
     {
         "Group": 1,
         "Title": "KP - GroupOrderWalk",
-        "Code": "procedure GroupOrderWalk(aGroupID: Integer; X: Word; Y: Word; aDirection: Word);\r\nbegin\r\n  \r\nend;\r\n"
+        "Code": "var\r\n  groupId: Integer;\r\n  xCoord,\r\n  yCoord,\r\n  direction: Word;\r\n\r\nActions.GroupOrderWalk(groupId, xCoord, yCoord, direction);\r\n"
     },
     {
         "Group": 1,
         "Title": "KP - GroupSetFormation",
-        "Code": "procedure GroupSetFormation(aGroupID: Integer; aNumColumns: Byte);\r\nbegin\r\n  \r\nend;\r\n"
-    },
-    {
-        "Group": 1,
-        "Title": "KP - HouseAddDamage",
-        "Code": "procedure HouseAddDamage(aHouseID: Integer; aDamage: Word);\r\nbegin\r\n  \r\nend;\r\n"
-    },
-    {
-        "Group": 1,
-        "Title": "KP - HouseAddRepair",
-        "Code": "procedure HouseAddRepair(aHouseID: Integer; aRepair: Word);\r\nbegin\r\n  \r\nend;\r\n"
-    },
-    {
-        "Group": 1,
-        "Title": "KP - HouseAddWaresTo",
-        "Code": "procedure HouseAddWaresTo(aHouseID: Integer; aWareType: TKMWareType; aCount: Word);\r\nbegin\r\n  \r\nend;\r\n"
-    },
-    {
-        "Group": 1,
-        "Title": "KP - HouseAllow",
-        "Code": "procedure HouseAllow(aPlayer: Integer; aHouseType: TKMHouseType; aAllowed: Boolean);\r\nbegin\r\n  \r\nend;\r\n"
-    },
-    {
-        "Group": 1,
-        "Title": "KP - HouseDestroy",
-        "Code": "procedure HouseDestroy(aHouseID: Integer; aSilent: Boolean);\r\nbegin\r\n  \r\nend;\r\n"
-    },
-    {
-        "Group": 1,
-        "Title": "KP - HouseRepairEnable",
-        "Code": "procedure HouseRepairEnable(aHouseID: Integer; aRepairEnabled: Boolean);\r\nbegin\r\n  \r\nend;\r\n"
+        "Code": "var\r\n  groupId: Integer;\r\n  numColumns: Byte;\r\n\r\nActions.GroupSetFormation(groupId, numColumns);\r\n"
     },
     {
         "Group": 3,
