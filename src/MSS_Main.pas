@@ -40,10 +40,10 @@ type
     constructor Create;
     destructor Destroy; override;
     procedure DoNppnStartedUp; override;
-    procedure DoNppnToolbarModification; override;
     procedure InitNpp;
-    procedure ShowAbout;
     procedure ShowSnippetForm;
+    procedure CloseSnippetForm;
+    procedure ShowAbout;
   end;
 
 implementation
@@ -56,13 +56,15 @@ uses
 { TMSS_Main }
 constructor TMSS_Main.Create;
 resourcestring
-  sSnipPanel = 'Show Snippet panel';
-  sAbout     = 'About';
+  sShowSnipPanel  = 'Show Snippet panel';
+  sCloseSnipPanel = 'Close Snippet panel';
+  sAbout          = 'About';
 begin
   inherited;
   PluginName := 'Map Script Snippets';
 
-  AddFuncItem(sSnipPanel, _CFuncShowSnippetForm);
+  AddFuncItem(sShowSnipPanel, _CFuncShowSnippetForm);
+  AddFuncItem(sCloseSnipPanel, _CFuncCloseSnippetForm);
   AddFuncItem('-', nil);
   AddFuncItem(sAbout, _CFuncShowAbout);
 end;
@@ -85,15 +87,6 @@ begin
     ShowSnippetForm
 end;
 
-procedure TMSS_Main.DoNppnToolbarModification;
-var
-  tb: TToolbarIcons;
-begin
-  tb.ToolbarIcon := 0;
-  tb.ToolbarBmp  := LoadImage(hInstance, 'IDB_TB_ICON', IMAGE_BITMAP, 0, 0, (LR_DEFAULTSIZE or LR_LOADMAP3DCOLORS));
-  SendMessage(self.NppData.NppHandle, NPPM_ADDTOOLBARICON, WPARAM(CmdIdFromDlgId(1)), LPARAM(@tb));
-end;
-
 procedure TMSS_Main.ShowAbout;
 begin
   if (not Assigned(GAboutFrm)) then
@@ -109,6 +102,15 @@ begin
     GSnippetForm := TMSS_SnippetForm.Create(self, 1);
 
   GSnippetForm.Show;
+end;
+
+procedure TMSS_Main.CloseSnippetForm;
+begin
+  if Assigned(GSnippetForm) then
+  begin
+    GSnippetForm.Hide;
+    FreeAndNil(GSnippetForm);
+  end;
 end;
 
 initialization

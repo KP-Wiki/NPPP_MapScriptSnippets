@@ -23,6 +23,7 @@ unit MSS_PluginCInterface;
 
 interface
 procedure _CFuncShowSnippetForm; cdecl;
+procedure _CFuncCloseSnippetForm; cdecl;
 procedure _CFuncShowAbout; cdecl;
 
 implementation
@@ -32,6 +33,11 @@ uses
 procedure _CFuncShowSnippetForm; cdecl;
 begin
   (FNPPPlugin as TMSS_Main).ShowSnippetForm;
+end;
+
+procedure _CFuncCloseSnippetForm; cdecl;
+begin
+  (FNPPPlugin as TMSS_Main).CloseSnippetForm;
 end;
 
 procedure _CFuncShowAbout; cdecl;
