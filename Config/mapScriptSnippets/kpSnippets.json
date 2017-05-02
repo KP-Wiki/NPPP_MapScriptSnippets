@@ -175,6 +175,66 @@
         "Code": "var\r\n  groupId: Integer;\r\n  numColumns: Byte;\r\n\r\nActions.GroupSetFormation(groupId, numColumns);\r\n"
     },
     {
+        "Group": 1,
+        "Title": "KP - HouseAddDamage",
+        "Code": "var\r\n  houseId: Integer;\r\n  damageAmount: Word;\r\n\r\nActions.HouseAddDamage(houseId, damageAmount);\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - HouseAddRepair",
+        "Code": "var\r\n  houseId: Integer;\r\n  repairAmount: Word;\r\n\r\nActions.HouseAddRepair(houseId, repairAmount);\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - HouseAddWaresTo",
+        "Code": "var\r\n  houseId: Integer;\r\n  wareType: TKMWareType;\r\n  count: Word;\r\n\r\nActions.HouseAddWaresTo(houseId, wareType, repairAmount);\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - HouseAllow",
+        "Code": "var\r\n  playerId: Integer;\r\n  houseType: TKMHouseType;\r\n  allowed: Boolean;\r\n\r\nActions.HouseAllow(playerId, houseType, allowed);\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - HouseDestroy",
+        "Code": "var\r\n  houseId: Integer;\r\n  silent: Boolean; \/\/ Prevent the player from recieving a notification\r\n\r\nActions.HouseDestroy(houseId, silent);\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - HouseRepairEnable",
+        "Code": "var\r\n  houseId: Integer;\r\n  repairEnabled: Boolean;\r\n\r\nActions.HouseRepairEnable(houseId, repairEnabled);\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - HouseTrainQueueAdd",
+        "Code": "var\r\n  houseId: Integer;\r\n  unitType: TKMUnitType;\r\n  count: Integer;\r\n  realCount: Integer;\r\n\r\nrealCount := Actions.HouseTrainQueueAdd(houseId, unitType, count);\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - HouseTrainQueueRemove",
+        "Code": "var\r\n  houseId: Integer;\r\n  queueIndex: Integer;\r\n\r\nActions.HouseTrainQueueRemove(houseId, queueIndex);\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - HouseUnlock",
+        "Code": "var\r\n  playerId: Integer;\r\n  houseType: TKMHouseType;\r\n\r\nActions.HouseUnlock(playerId, houseType);\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - HouseWareInBlock",
+        "Code": "var\r\n  houseId: Integer;\r\n  wareType: TKMWareType;\r\n  blocked: Boolean;\r\n\r\nActions.HouseWareInBlock(houseId, wareType, blocked);\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - HouseWeaponsOrderSet",
+        "Code": "var\r\n  houseId: Integer;\r\n  wareType: TKMWareType;\r\n  amount: Integer;\r\n\r\nActions.HouseWeaponsOrderSet(houseId, wareType, amount);\r\n"
+    },
+    {
+        "Group": 1,
+        "Title": "KP - HouseWoodcutterChopOnly",
+        "Code": "var\r\n  houseId: Integer;\r\n  chopOnly: Boolean;\r\n\r\nActions.HouseWoodcutterChopOnly(houseId, chopOnly);\r\n"
+    },
+    {
         "Group": 3,
         "Title": "KP - GetHouseName",
         "Code": "function GetHouseName(aHouseType: TKMHouseType): String;\r\nbegin\r\n  case aHouseType of\r\n    htNone:           Result := 'None';\r\n    htFoundry:        Result := 'Foundry';\r\n    htWeaponSmithy:   Result := 'Weapon-smithy';\r\n    htCoalMaker:      Result := 'Coal-maker';\r\n    htIronMine:       Result := 'Iron-mine';\r\n    htGoldMine:       Result := 'Gold-mine';\r\n    htFishermans:     Result := 'Fishermans';\r\n    htBakery:         Result := 'Bakery';\r\n    htFarm:           Result := 'Farm';\r\n    htWoodcutters:    Result := 'Woodcutters';\r\n    htArmorSmithy:    Result := 'Armor-smithy';\r\n    htCamp:           Result := 'Camp';\r\n    htStables:        Result := 'Stables';\r\n    htSchool:         Result := 'School';\r\n    htStoneCutter:    Result := 'Stone-cutters';\r\n    htMetallurgists:  Result := 'Metallurgists';\r\n    htSwineFarm:      Result := 'Swine-farm';\r\n    htArrowTower:     Result := 'Arrow-tower';\r\n    htRangerShop:     Result := 'Ranger-shop';\r\n    htWeaponWorkshop: Result := 'Weapon-workshop';\r\n    htArmorWorkshop:  Result := 'Armor-workshop';\r\n    htBarracks:       Result := 'Barracks';\r\n    htMill:           Result := 'Mill';\r\n    htSiegeWorkshop:  Result := 'Siege-workshop';\r\n    htButchers:       Result := 'Butchers';\r\n    htTannery:        Result := 'Tannery';\r\n    htStore:          Result := 'Store';\r\n    htTavern:         Result := 'Tavern';\r\n    htBrewery:        Result := 'Brewery';\r\n    htMarketplace:    Result := 'Marketplace';\r\n    htFort:           Result := 'Fort';\r\n    htBoltTower:      Result := 'Bolt-tower';\r\n    htCiderMaker:     Result := 'Cider-maker';\r\n    htSawmill:        Result := 'Sawmill';\r\n    htCottage:        Result := 'Cottage';\r\n  else\r\n    Result := 'Unknown';\r\n  end;\r\nend;\r\n"
